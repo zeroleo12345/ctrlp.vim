@@ -1977,6 +1977,7 @@ endf
 
 fu! s:regexfilter(str)
 	let str = a:str
+	let str = substitute(str, ' ', '.*', 'g')
 	for key in keys(s:fpats) | if str =~ key
 		let str = substitute(str, s:fpats[key], '', 'g')
 	en | endfo
